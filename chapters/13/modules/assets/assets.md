@@ -49,9 +49,31 @@ jar -cvf mods/zoo.animal.talks.jar -C talks .
 java -p mods -m zoo.animal.talks/zoo.animal.talks.media.Announcement
 ```
 
-## Múdulo Staff
+## Módulo Staff
 - Compilar os arquivos
 ```bash
 javac -d staff -p mods staff/zoo/staff/*.java staff/module-info.java
 ```
 
+## Service
+
+- Compilar os arquivos
+```bash
+javac -d ServiceProviderInterfaceModule ServiceProviderInterfaceModule/zoo/tours/api/*.java ServiceProviderInterfaceModule/module-info.java
+```
+
+- Empacotar os arquivos compilados
+```bash
+jar -cvf mods/zoo.tours.api.jar -C ServiceProviderInterfaceModule .
+```
+
+## Módulo Service Locator
+- Compilar os arquivos
+```bash
+javac -p mods -d serviceLocatorModule serviceLocatorModule/module-info.java serviceLocatorModule/zoo/tours/reservations/TourFinder.java
+```
+
+- Empacotar os arquivos compilados
+```bash
+jar -cvf mods/zoo.tours.reservations.jar -C serviceLocatorModule .
+```
