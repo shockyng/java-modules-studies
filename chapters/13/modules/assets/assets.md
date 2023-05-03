@@ -128,3 +128,24 @@ Executar programa
 java -p mods -m zoo.visitor/zoo.visitor.Tourist
 ```
 
+## Módulo Service Provider
+
+---
+
+Compilar os arquivos
+
+```bash
+javac -p mods -d serviceProviderModule/ serviceProviderModule/module-info.java serviceProviderModule/zoo/tours/agency/TourImpl.java
+```
+
+Empacotar os arquivos compilados
+
+```bash
+jar -cvf mods/zoo.tours.agency.jar -C serviceProviderModule .
+```
+
+Executar programa
+
+```bash
+java -p mods -m zoo.visitor/zoo.visitor.Tourist
+```
